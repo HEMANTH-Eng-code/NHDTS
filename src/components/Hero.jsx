@@ -1,29 +1,57 @@
-function Hero() {
+import { Link } from "react-router-dom";
+import "../styles/Hero.css";
+
+const Hero = () => {
   return (
     <section className="hero">
-      <p className="tag">
-        NEXT GENERATION SOFTWARE COMPANY
-      </p>
+      <div className="hero-glow"></div>
 
-      <h1>
-        Building Digital
-        <br />
-        Products For
-        <span> The Future</span>
-      </h1>
+      <div className="container hero-container">
 
-      <p className="subtitle">
-        We design, develop and deliver modern software,
-        websites, mobile apps, cloud solutions and AI-powered
-        products.
-      </p>
+        <span className="hero-tag">NEXT GENERATION SOFTWARE COMPANY</span>
 
-      <div className="buttons">
-        <button className="primary">Our Services</button>
-        <button className="secondary">Contact Us</button>
+        <h1 className="hero-title">
+          Building Digital <span className="highlight">Products</span> For
+          The Future
+        </h1>
+
+        <p className="hero-description">
+          NHDTS delivers custom software, websites, mobile apps, enterprise
+          systems, cloud infrastructure and AI-powered solutions that help
+          businesses grow faster and operate smarter.
+        </p>
+
+        <div className="hero-buttons">
+          <Link to="/contact" className="primary-btn">
+            Request Consultation
+          </Link>
+          <Link to="/services" className="secondary-btn">
+            Explore Services
+          </Link>
+        </div>
+
+        <div className="hero-stats">
+          <div className="stat">
+            <h3>150+</h3>
+            <p>Projects Delivered</p>
+          </div>
+          <div className="stat">
+            <h3>50+</h3>
+            <p>Happy Clients</p>
+          </div>
+          <div className="stat">
+            <h3>99%</h3>
+            <p>Client Satisfaction</p>
+          </div>
+          <div className="stat">
+            <h3>24/7</h3>
+            <p>Support Available</p>
+          </div>
+        </div>
+
       </div>
     </section>
   );
-}
+};
 
 export default Hero;

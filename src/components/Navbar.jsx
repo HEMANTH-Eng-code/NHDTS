@@ -1,59 +1,57 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaBars, FaTimes } from "react-icons/fa";
+import logo from "../assets/logo.jpeg";
+import "../styles/Navbar.css";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const closeMenu = () => setMenuOpen(false);
 
   return (
-    <nav className="navbar">
-      <div className="logo">NHDTS</div>
+    <header className="navbar">
+      <div className="navbar-container">
 
-      <ul className={menuOpen ? "nav-links active" : "nav-links"}>
-        <li>
-          <NavLink to="/" onClick={() => setMenuOpen(false)}>
-            Home
-          </NavLink>
-        </li>
+        <NavLink to="/" className="navbar-logo" onClick={closeMenu}>
+          <img src={logo} alt="NHDTS Logo" />
+          <span className="navbar-logo-text">NHDTS</span>
+        </NavLink>
 
-        <li>
-          <NavLink to="/about" onClick={() => setMenuOpen(false)}>
-            About
-          </NavLink>
-        </li>
+        <nav className={`navbar-links ${menuOpen ? "active" : ""}`}>
+          <NavLink to="/" onClick={closeMenu} end>Home</NavLink>
+          <NavLink to="/about" onClick={closeMenu}>About</NavLink>
+          <NavLink to="/services" onClick={closeMenu}>Services</NavLink>
+          <NavLink to="/contact" onClick={closeMenu}>Contact</NavLink>
 
-        <li>
-          <NavLink to="/services" onClick={() => setMenuOpen(false)}>
-            Services
-          </NavLink>
-        </li>
+          <div className="navbar-icons-mobile">
+            <a href="tel:+919110344543" title="Call Us"><FaPhoneAlt /></a>
+            <a href="mailto:contact@nhdts.com" title="Email Us"><FaEnvelope /></a>
+          </div>
+        </nav>
 
-        <li>
-          <NavLink to="/portfolio" onClick={() => setMenuOpen(false)}>
-            Portfolio
-          </NavLink>
-        </li>
+        <div className="navbar-actions">
 
-        <li>
-          <NavLink to="/contact" onClick={() => setMenuOpen(false)}>
-            Contact
-          </NavLink>
-        </li>
+          <div className="navbar-icons">
+            <a href="tel:+919110344543" title="Call Us"><FaPhoneAlt /></a>
+            <a href="mailto:contact@nhdts.com" title="Email Us"><FaEnvelope /></a>
+          </div>
 
-        <li>
-          <button className="nav-btn">
+          <NavLink to="/contact" className="navbar-cta">
             Request Consultation
-          </button>
-        </li>
-      </ul>
+          </NavLink>
 
-      <div
-        className="menu-icon"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        {menuOpen ? <FaTimes /> : <FaBars />}
+          <button
+            className="navbar-toggle"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+
+        </div>
+
       </div>
-    </nav>
+    </header>
   );
 }
 

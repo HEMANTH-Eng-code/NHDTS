@@ -1,0 +1,55 @@
+/* ==========================================
+   NHDTS Design Variables
+========================================== */
+
+:root {
+
+  /* Brand Colors */
+
+  --primary: #2563EB;
+  --primary-light: #3B82F6;
+  --secondary: #7C3AED;
+
+  /* Background Colors */
+
+  --bg: #FFFFFF;
+  --bg-light: #F8FAFC;
+  --surface: #FFFFFF;
+
+  /* Text Colors */
+
+  --heading: #111827;
+  --text: #6B7280;
+  --text-light: #9CA3AF;
+
+  /* Other Colors */
+
+  --white: #FFFFFF;
+  --black: #000000;
+  --border: #E5E7EB;
+
+  /* Layout */
+
+  --container: 1400px;
+
+  /* Border Radius */
+
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 20px;
+
+  /* Shadows */
+
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow: 0 8px 25px rgba(0,0,0,0.10);
+  --shadow-lg: 0 15px 40px rgba(0,0,0,0.15);
+
+  /* Animation */
+
+  --transition: 0.3s ease;
+
+  /* Navbar */
+
+  --navbar-height: 80px;
+
+}
